@@ -1,0 +1,18 @@
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "binomial-expander"
+version = "0.1.3"
+description = "A terminal-based binomial expansion calculator"
+readme = "README.MD"
+requires-python = ">=3.10"
+dependencies = ["rich"]
+
+[project.scripts]
+binomial-calculator = "binomial:main"
+
+[tool.setuptools]
+py-modules = ["binomial"]

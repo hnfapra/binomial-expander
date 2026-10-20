@@ -45,66 +45,71 @@ def format_expansion(coefficients):
 def binExpand(power, term, coef):
     return format_expansion(convertfrac(expand(power, term, coef)))
 
-
-console.print(
-    Align.center(
-        
-    Panel(
-        Group(     
+def main():
+    
+    console.print(
         Align.center(
-            "Welcome to Binomial Expansion Calculator!"
-        ),
+            
+        Panel(
+            Group(     
+            Align.center(
+                "Welcome to Binomial Expansion Calculator!"
+            ),
+            Align.center(
+                Panel(  
+                "(1+[bold cyan]k[/bold cyan]x)^[bold red]n[/bold red]", 
+                padding=(1,8),
+                )
+            ),
+            ),
+            
+        width=console.width-50
+        )
+        )
+    )
+
+    console.print(
         Align.center(
-            Panel(  
-            "(1+[bold cyan]k[/bold cyan]x)^[bold red]n[/bold red]", 
-            padding=(1,8),
-            )
-        ),
-        ),
-        
-     width=console.width-50
-    )
-    )
-)
-
-console.print(
-    Align.center(
-            Panel(
-                Group(     
-                        Align.center(
-                            "How many [bold yellow] terms [/bold yellow] do you want? "
-                        ),
-                        Align.center( 
-                            "What is the [bold cyan]coefficient[/bold cyan] of x? ", 
-                        ),
-                        Align.center(
-                            "How many[bold red] power[/bold red] the binomial expression raised? ", 
-                        ),
-                        ),
-                title="Input",
-                padding=(1,2),
-                width=console.width-50
-            )
-    )
-)
-
-term = int(console.input("[bold cyan]term > [/bold cyan]"))
-k = float(console.input("[bold cyan]k > [/bold cyan]"))
-n = float((console.input("[bold cyan]n > [/bold cyan]")))
-
-
-
-console.print(
-    Align.center(
                 Panel(
                     Group(     
                             Align.center(
-                                binExpand(n, term, k)
+                                "How many [bold yellow] terms [/bold yellow] do you want? "
+                            ),
+                            Align.center( 
+                                "What is the [bold cyan]coefficient[/bold cyan] of x? ", 
+                            ),
+                            Align.center(
+                                "How many[bold red] power[/bold red] the binomial expression raised? ", 
                             ),
                             ),
-                    title="Expanded Form",
+                    title="Input",
                     padding=(1,2),
                     width=console.width-50
-            )
+                )
+        )
     )
-)
+
+    term = int(console.input("[bold cyan]term > [/bold cyan]"))
+    k = float(console.input("[bold cyan]k > [/bold cyan]"))
+    n = float((console.input("[bold cyan]n > [/bold cyan]")))
+
+
+
+    console.print(
+        Align.center(
+                    Panel(
+                        Group(     
+                                Align.center(
+                                    binExpand(n, term, k)
+                                ),
+                                ),
+                        title="Expanded Form",
+                        padding=(1,2),
+                        width=console.width-50
+                )
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()
